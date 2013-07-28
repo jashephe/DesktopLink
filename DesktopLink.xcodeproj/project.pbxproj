@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1A5DB117A5AA9900FDDAE2 /* NSShadow+FastCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A5DB017A5AA9900FDDAE2 /* NSShadow+FastCreation.m */; };
 		1A6EFA2A17A54D3500C569BC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6EFA2917A54D3500C569BC /* Cocoa.framework */; };
 		1A6EFA3417A54D3500C569BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3217A54D3500C569BC /* InfoPlist.strings */; };
 		1A6EFA3617A54D3500C569BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3517A54D3500C569BC /* main.m */; };
-		1A6EFA3A17A54D3500C569BC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3817A54D3500C569BC /* Credits.rtf */; };
 		1A6EFA3D17A54D3500C569BC /* DLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3C17A54D3500C569BC /* DLAppDelegate.m */; };
-		1A6EFA4017A54D3500C569BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3E17A54D3500C569BC /* MainMenu.xib */; };
+		1A6EFA4B17A5536800C569BC /* DLDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EFA4A17A5536800C569BC /* DLDesktopWindow.m */; };
+		1A7C71EF17A57128002CDB8D /* DLActionButtonContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C71EE17A57128002CDB8D /* DLActionButtonContainerView.m */; };
+		1A7C71F217A5734D002CDB8D /* DLActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C71F117A5734D002CDB8D /* DLActionButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1A5DAF17A5AA9900FDDAE2 /* NSShadow+FastCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSShadow+FastCreation.h"; sourceTree = "<group>"; };
+		1A1A5DB017A5AA9900FDDAE2 /* NSShadow+FastCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+FastCreation.m"; sourceTree = "<group>"; };
 		1A6EFA2617A54D3500C569BC /* DesktopLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6EFA2917A54D3500C569BC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1A6EFA2C17A54D3500C569BC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -25,10 +29,14 @@
 		1A6EFA3317A54D3500C569BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A6EFA3517A54D3500C569BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1A6EFA3717A54D3500C569BC /* DesktopLink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesktopLink-Prefix.pch"; sourceTree = "<group>"; };
-		1A6EFA3917A54D3500C569BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		1A6EFA3B17A54D3500C569BC /* DLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLAppDelegate.h; sourceTree = "<group>"; };
 		1A6EFA3C17A54D3500C569BC /* DLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLAppDelegate.m; sourceTree = "<group>"; };
-		1A6EFA3F17A54D3500C569BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1A6EFA4917A5536800C569BC /* DLDesktopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLDesktopWindow.h; sourceTree = "<group>"; };
+		1A6EFA4A17A5536800C569BC /* DLDesktopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLDesktopWindow.m; sourceTree = "<group>"; };
+		1A7C71ED17A57128002CDB8D /* DLActionButtonContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLActionButtonContainerView.h; sourceTree = "<group>"; };
+		1A7C71EE17A57128002CDB8D /* DLActionButtonContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLActionButtonContainerView.m; sourceTree = "<group>"; };
+		1A7C71F017A5734D002CDB8D /* DLActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLActionButton.h; sourceTree = "<group>"; };
+		1A7C71F117A5734D002CDB8D /* DLActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLActionButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +92,14 @@
 			children = (
 				1A6EFA3B17A54D3500C569BC /* DLAppDelegate.h */,
 				1A6EFA3C17A54D3500C569BC /* DLAppDelegate.m */,
-				1A6EFA3E17A54D3500C569BC /* MainMenu.xib */,
+				1A6EFA4917A5536800C569BC /* DLDesktopWindow.h */,
+				1A6EFA4A17A5536800C569BC /* DLDesktopWindow.m */,
+				1A7C71ED17A57128002CDB8D /* DLActionButtonContainerView.h */,
+				1A7C71EE17A57128002CDB8D /* DLActionButtonContainerView.m */,
+				1A7C71F017A5734D002CDB8D /* DLActionButton.h */,
+				1A7C71F117A5734D002CDB8D /* DLActionButton.m */,
+				1A1A5DAF17A5AA9900FDDAE2 /* NSShadow+FastCreation.h */,
+				1A1A5DB017A5AA9900FDDAE2 /* NSShadow+FastCreation.m */,
 				1A6EFA3017A54D3500C569BC /* Supporting Files */,
 			);
 			path = DesktopLink;
@@ -97,7 +112,6 @@
 				1A6EFA3217A54D3500C569BC /* InfoPlist.strings */,
 				1A6EFA3517A54D3500C569BC /* main.m */,
 				1A6EFA3717A54D3500C569BC /* DesktopLink-Prefix.pch */,
-				1A6EFA3817A54D3500C569BC /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,8 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6EFA3417A54D3500C569BC /* InfoPlist.strings in Resources */,
-				1A6EFA3A17A54D3500C569BC /* Credits.rtf in Resources */,
-				1A6EFA4017A54D3500C569BC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +181,10 @@
 			files = (
 				1A6EFA3617A54D3500C569BC /* main.m in Sources */,
 				1A6EFA3D17A54D3500C569BC /* DLAppDelegate.m in Sources */,
+				1A6EFA4B17A5536800C569BC /* DLDesktopWindow.m in Sources */,
+				1A7C71EF17A57128002CDB8D /* DLActionButtonContainerView.m in Sources */,
+				1A7C71F217A5734D002CDB8D /* DLActionButton.m in Sources */,
+				1A1A5DB117A5AA9900FDDAE2 /* NSShadow+FastCreation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,22 +197,6 @@
 				1A6EFA3317A54D3500C569BC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1A6EFA3817A54D3500C569BC /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A6EFA3917A54D3500C569BC /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		1A6EFA3E17A54D3500C569BC /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A6EFA3F17A54D3500C569BC /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,6 +304,7 @@
 				1A6EFA4517A54D3500C569BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  DLAppDelegate.h
+//  DLActionButton.h
 //  DesktopLink
 //
 //  Created by James Shepherdson on 7/28/13.
@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DLAppDelegate : NSObject <NSApplicationDelegate>
+@interface DLActionButton : NSButton
+
+@end
+
+@interface DLActionButtonCell : NSButtonCell
 
 @end
