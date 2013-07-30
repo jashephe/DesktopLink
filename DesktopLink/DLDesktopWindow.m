@@ -74,7 +74,7 @@
 @implementation DLTransparentWindowFrame
 
 #define WINDOW_CORNER_RADIUS	 10.0f
-#define BACKGROUND_COLOR [NSColor colorWithCalibratedWhite:0.5 alpha:0.2]
+#define BACKGROUND_COLOR [NSColor colorWithCalibratedWhite:0.5 alpha:0.25]
 #define SHADOW_THICKNESS 10.0f
 
 - (void)drawRect:(NSRect)dirtyRect {

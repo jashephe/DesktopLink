@@ -20,15 +20,15 @@
 - (id)init {
 	self = [super init];
 	if (self) {
-		DLActionButton *test1 = [[DLActionButton alloc] init];
-		[test1 setImage:[NSImage imageNamed:NSImageNameNetwork]];
-		[test1 setTitle:@"DMC Website"];
-		DLActionButton *test2 = [[DLActionButton alloc] init];
-		[test2 setImage:[NSImage imageNamed:NSImageNameShareTemplate]];
-		[test2 setTitle:@"Online Reservations"];
-		DLActionButton *test3 = [[DLActionButton alloc] init];
-		[test3 setImage:[NSImage imageNamed:NSImageNameInfo]];
-		[test3 setTitle:@"Help Wiki"];
+		DLActionButton *test1 = [[DLActionButton alloc] initWithTitle:@"DMC Website" image:[NSImage imageNamed:NSImageNameNetwork] handler:^{
+			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://digitalmedia.jhu.edu/"]];
+		}];
+		DLActionButton *test2 = [[DLActionButton alloc] initWithTitle:@"Online Reservations" image:[NSImage imageNamed:NSImageNameBonjour] handler:^{
+			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://checkout.dmc.jhu.edu/webcheckout/pir"]];
+		}];
+		DLActionButton *test3 = [[DLActionButton alloc] initWithTitle:@"Help Wiki" image:[NSImage imageNamed:NSImageNameInfo] handler:^{
+			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://proteus.dmc.jhu.edu/groups/helpwiki/"]];
+		}];
 		
 		DLActionButtonContainerView *actionButtonContainer = [[DLActionButtonContainerView alloc] initWithActionButtonSize:NSMakeSize(160, 160)];
 		[actionButtonContainer addActionButton:test1];

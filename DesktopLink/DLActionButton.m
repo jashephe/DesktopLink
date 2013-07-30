@@ -12,6 +12,7 @@
 @interface DLActionButton ()
 
 @property NSTrackingArea *mouseTrackingArea;
+@property (nonatomic, copy) ActionBlock block;
 
 @end
 
@@ -21,9 +22,16 @@
 	[DLActionButton setCellClass:[DLActionButtonCell class]];
 }
 
-- (id)init {
+- (id)initWithTitle:(NSString *)aTitle image:(NSImage *)anImage handler:(ActionBlock)aBlock {
 	self = [super init];
 	if (self) {
+		self.image = anImage;
+		self.title = aTitle;
+		self.block = aBlock;
+		
+		[self setTarget:self];
+		[self setAction:@selector(performBlockAction)];
+		
 		[self setBordered:YES];
 		[self setButtonType:NSMomentaryLightButton];
 		[self setBezelStyle:NSSmallSquareBezelStyle];
@@ -46,52 +54,74 @@
 	[self.cell mouseExited:event];
 }
 
+- (void)performBlockAction {
+	self.block();
+}
+
 @end
 
 #pragma mark -
 #pragma mark Button Drawing
 
 @interface DLActionButtonCell ()
-
 @property BOOL mouseoverActive;
-
 @end
 
 @implementation DLActionButtonCell
 
 - (void)drawImage:(NSImage*)image withFrame:(NSRect)frame inView:(NSView*)controlView {
 	if ([self isHighlighted]) {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.8 respectFlipped:YES hints:nil];
-	} else {
+		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.9 respectFlipped:YES hints:nil];
+	}
+	else if (self.mouseoverActive) {
+		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.7 respectFlipped:YES hints:nil];
+	}
+	else {
 		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.5 respectFlipped:YES hints:nil];
 	}
 }
 
+static NSDictionary *baseTextAttributes;
+
 - (NSRect)drawTitle:(NSAttributedString*)title withFrame:(NSRect)frame inView:(NSView*)controlView {
-	NSMutableAttributedString *styledTitle = [[NSMutableAttributedString alloc] initWithAttributedString:title];
 	
-	NSMutableParagraphStyle *centeredParagraphStyle = [[NSMutableParagraphStyle alloc] init];
-	[centeredParagraphStyle setAlignment:NSCenterTextAlignment];
-	NSDictionary *attributes = @{NSForegroundColorAttributeName : [NSColor colorWithCalibratedWhite:1.0f alpha:0.9f],
-							  NSShadowAttributeName : [NSShadow shadowWithColor:[NSColor blackColor] offset:NSMakeSize(0, -1) blurRadius:3.0f],
-							  NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Helvetica Neue" traits:0 weight:3 size:16],
-							  NSParagraphStyleAttributeName : centeredParagraphStyle
-							  };
+	if (!baseTextAttributes) {
+		NSMutableParagraphStyle 	*centeredParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+		[centeredParagraphStyle setAlignment:NSCenterTextAlignment];
+		baseTextAttributes = @{NSShadowAttributeName : [NSShadow shadowWithColor:[NSColor blackColor] offset:NSMakeSize(0, -1) blurRadius:3.0f],
+						 NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Helvetica Neue" traits:0 weight:3 size:16],
+						 NSParagraphStyleAttributeName : centeredParagraphStyle
+						 };
+	}
+	
+	NSMutableAttributedString *styledTitle = [title mutableCopy];
+	
+	NSMutableDictionary *attributes = [baseTextAttributes mutableCopy];
+	
+	if ([self isHighlighted]) {
+		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:0.9f] forKey:NSForegroundColorAttributeName];
+	}
+	else if (self.mouseoverActive) {
+		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:0.7f] forKey:NSForegroundColorAttributeName];
+	}
+	else {
+		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:0.5f] forKey:NSForegroundColorAttributeName];
+	}
 	
 	[styledTitle setAttributes:attributes range:NSMakeRange(0, styledTitle.length)];
 	
-	[styledTitle drawInRect:NSMakeRect(0, self.controlView.bounds.size.height - styledTitle.size.height, self.controlView.bounds.size.width, styledTitle.size.height)];
+	[styledTitle drawInRect:NSMakeRect(0, self.controlView.bounds.size.height - styledTitle.size.height - self.controlView.bounds.size.height*0.05f, self.controlView.bounds.size.width, styledTitle.size.height)];
 	return frame;
 }
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
 	if ([self isHighlighted]) {
-		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:10.0f yRadius:10.0f];
+		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:10.0f yRadius:8.0f];
 		[[NSColor colorWithCalibratedWhite:0.0 alpha:0.2] set];
 		[path fill];
 	}
 	else if (self.mouseoverActive) {
-		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:10.0f yRadius:10.0f];
+		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:10.0f yRadius:8.0f];
 		[[NSColor colorWithCalibratedWhite:0.0 alpha:0.1] set];
 		[path fill];
 	}

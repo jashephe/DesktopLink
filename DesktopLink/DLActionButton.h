@@ -10,6 +10,10 @@
 
 @interface DLActionButton : NSButton
 
+typedef void (^ActionBlock)(void);
+
+- (id)initWithTitle:(NSString *)aTitle image:(NSImage *)anImage handler:(ActionBlock)aBlock;
+
 @end
 
 @interface DLActionButtonCell : NSButtonCell
