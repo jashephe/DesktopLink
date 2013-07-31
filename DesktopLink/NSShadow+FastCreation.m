@@ -10,12 +10,14 @@
 
 @implementation NSShadow (FastCreation)
 
-+ (NSShadow *)shadowWithColor:(NSColor *)theColor offset:(NSSize)theOffset blurRadius:(CGFloat)theBlurRadius {
-	NSShadow *theShadow = [[NSShadow alloc] init];
-	[theShadow setShadowColor:theColor];
-	[theShadow setShadowOffset:theOffset];
-	[theShadow setShadowBlurRadius:theBlurRadius];
-	return theShadow;
+- (id)initWithColor:(NSColor *)theColor offset:(NSSize)theOffset blurRadius:(CGFloat)theBlurRadius {
+	self = [super init];
+	if (self) {
+		[self setShadowColor:theColor];
+		[self setShadowOffset:theOffset];
+		[self setShadowBlurRadius:theBlurRadius];
+	}
+	return self;
 }
 
 @end

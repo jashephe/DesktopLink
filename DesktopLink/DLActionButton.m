@@ -67,17 +67,22 @@
 @property BOOL mouseoverActive;
 @end
 
+#define BACKGROUND_OPACITY 0.1
+#define BASE_OPACITY 0.6
+#define OPACITY_INCREMENT 0.2
+#define CORNER_RADIUS 8.0
+
 @implementation DLActionButtonCell
 
 - (void)drawImage:(NSImage*)image withFrame:(NSRect)frame inView:(NSView*)controlView {
 	if ([self isHighlighted]) {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.9 respectFlipped:YES hints:nil];
+		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:BASE_OPACITY + 2*OPACITY_INCREMENT respectFlipped:YES hints:nil];
 	}
 	else if (self.mouseoverActive) {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.7 respectFlipped:YES hints:nil];
+		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:BASE_OPACITY + OPACITY_INCREMENT respectFlipped:YES hints:nil];
 	}
 	else {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:0.5 respectFlipped:YES hints:nil];
+		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:BASE_OPACITY respectFlipped:YES hints:nil];
 	}
 }
 
@@ -88,7 +93,7 @@ static NSDictionary *baseTextAttributes;
 	if (!baseTextAttributes) {
 		NSMutableParagraphStyle 	*centeredParagraphStyle = [[NSMutableParagraphStyle alloc] init];
 		[centeredParagraphStyle setAlignment:NSCenterTextAlignment];
-		baseTextAttributes = @{NSShadowAttributeName : [NSShadow shadowWithColor:[NSColor blackColor] offset:NSMakeSize(0, -1) blurRadius:3.0f],
+		baseTextAttributes = @{NSShadowAttributeName : [[NSShadow alloc] initWithColor:[NSColor blackColor] offset:NSMakeSize(0, -1) blurRadius:3.0f],
 						 NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Helvetica Neue" traits:0 weight:3 size:16],
 						 NSParagraphStyleAttributeName : centeredParagraphStyle
 						 };
@@ -99,13 +104,13 @@ static NSDictionary *baseTextAttributes;
 	NSMutableDictionary *attributes = [baseTextAttributes mutableCopy];
 	
 	if ([self isHighlighted]) {
-		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:0.9f] forKey:NSForegroundColorAttributeName];
+		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:BASE_OPACITY + 2*OPACITY_INCREMENT] forKey:NSForegroundColorAttributeName];
 	}
 	else if (self.mouseoverActive) {
-		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:0.7f] forKey:NSForegroundColorAttributeName];
+		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:BASE_OPACITY + OPACITY_INCREMENT] forKey:NSForegroundColorAttributeName];
 	}
 	else {
-		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:0.5f] forKey:NSForegroundColorAttributeName];
+		[attributes setValue:[NSColor colorWithCalibratedWhite:1.0f alpha:BASE_OPACITY] forKey:NSForegroundColorAttributeName];
 	}
 	
 	[styledTitle setAttributes:attributes range:NSMakeRange(0, styledTitle.length)];
@@ -116,13 +121,13 @@ static NSDictionary *baseTextAttributes;
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
 	if ([self isHighlighted]) {
-		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:10.0f yRadius:8.0f];
-		[[NSColor colorWithCalibratedWhite:0.0 alpha:0.2] set];
+		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
+		[[NSColor colorWithCalibratedWhite:0.0 alpha:BACKGROUND_OPACITY + OPACITY_INCREMENT] set];
 		[path fill];
 	}
 	else if (self.mouseoverActive) {
-		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:10.0f yRadius:8.0f];
-		[[NSColor colorWithCalibratedWhite:0.0 alpha:0.1] set];
+		NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.controlView.bounds xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
+		[[NSColor colorWithCalibratedWhite:0.0 alpha:BACKGROUND_OPACITY] set];
 		[path fill];
 	}
 }

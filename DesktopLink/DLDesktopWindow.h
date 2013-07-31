@@ -14,7 +14,3 @@
 - (void)reallyCenter;
 
 @end
-
-@interface DLTransparentWindowFrame : NSView
-
-@end

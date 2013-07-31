@@ -10,6 +10,6 @@
 
 @interface NSShadow (FastCreation)
 
-+ (NSShadow *)shadowWithColor:(NSColor *)theColor offset:(NSSize)theOffset blurRadius:(CGFloat)theBlurRadius;
+- (id)initWithColor:(NSColor *)theColor offset:(NSSize)theOffset blurRadius:(CGFloat)theBlurRadius;
 
 @end
