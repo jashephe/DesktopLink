@@ -75,14 +75,15 @@
 @implementation DLActionButtonCell
 
 - (void)drawImage:(NSImage*)image withFrame:(NSRect)frame inView:(NSView*)controlView {
+	NSRect imageRect = NSMakeRect(self.controlView.bounds.origin.x + self.controlView.bounds.size.width * 0.1, self.controlView.bounds.origin.y + self.controlView.bounds.size.height * 0.05, self.controlView.bounds.size.width * 0.8, self.controlView.bounds.size.height * 0.8);
 	if ([self isHighlighted]) {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:BASE_OPACITY + 2*OPACITY_INCREMENT respectFlipped:YES hints:nil];
+		[image drawInRect:imageRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:BASE_OPACITY + 2*OPACITY_INCREMENT respectFlipped:YES hints:nil];
 	}
 	else if (self.mouseoverActive) {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:BASE_OPACITY + OPACITY_INCREMENT respectFlipped:YES hints:nil];
+		[image drawInRect:imageRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:BASE_OPACITY + OPACITY_INCREMENT respectFlipped:YES hints:nil];
 	}
 	else {
-		[image drawInRect:NSInsetRect(self.controlView.bounds, self.controlView.bounds.size.width * 0.15, self.controlView.bounds.size.height * 0.15) fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:BASE_OPACITY respectFlipped:YES hints:nil];
+		[image drawInRect:imageRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:BASE_OPACITY respectFlipped:YES hints:nil];
 	}
 }
 

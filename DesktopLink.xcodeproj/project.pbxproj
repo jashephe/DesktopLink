@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1A1A5DB117A5AA9900FDDAE2 /* NSShadow+FastCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A5DB017A5AA9900FDDAE2 /* NSShadow+FastCreation.m */; };
+		1A3FE2FF17D9417F00EA1D4F /* DMC_3D_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A3FE2FD17D9417F00EA1D4F /* DMC_3D_color.png */; };
+		1A3FE30317D94DD800EA1D4F /* Camera_3D_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A3FE30217D94DD800EA1D4F /* Camera_3D_color.png */; };
+		1A3FE30517D94FD900EA1D4F /* Info_3D_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A3FE30417D94FD900EA1D4F /* Info_3D_color.png */; };
 		1A6EFA2A17A54D3500C569BC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6EFA2917A54D3500C569BC /* Cocoa.framework */; };
-		1A6EFA3417A54D3500C569BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3217A54D3500C569BC /* InfoPlist.strings */; };
 		1A6EFA3617A54D3500C569BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3517A54D3500C569BC /* main.m */; };
 		1A6EFA3D17A54D3500C569BC /* DLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EFA3C17A54D3500C569BC /* DLAppDelegate.m */; };
 		1A6EFA4B17A5536800C569BC /* DLDesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EFA4A17A5536800C569BC /* DLDesktopWindow.m */; };
@@ -20,13 +22,15 @@
 /* Begin PBXFileReference section */
 		1A1A5DAF17A5AA9900FDDAE2 /* NSShadow+FastCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSShadow+FastCreation.h"; sourceTree = "<group>"; };
 		1A1A5DB017A5AA9900FDDAE2 /* NSShadow+FastCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+FastCreation.m"; sourceTree = "<group>"; };
+		1A3FE2FD17D9417F00EA1D4F /* DMC_3D_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DMC_3D_color.png; sourceTree = "<group>"; };
+		1A3FE30217D94DD800EA1D4F /* Camera_3D_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera_3D_color.png; sourceTree = "<group>"; };
+		1A3FE30417D94FD900EA1D4F /* Info_3D_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_3D_color.png; sourceTree = "<group>"; };
 		1A6EFA2617A54D3500C569BC /* DesktopLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6EFA2917A54D3500C569BC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1A6EFA2C17A54D3500C569BC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1A6EFA2D17A54D3500C569BC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1A6EFA2E17A54D3500C569BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1A6EFA3117A54D3500C569BC /* DesktopLink-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesktopLink-Info.plist"; sourceTree = "<group>"; };
-		1A6EFA3317A54D3500C569BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A6EFA3517A54D3500C569BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1A6EFA3717A54D3500C569BC /* DesktopLink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesktopLink-Prefix.pch"; sourceTree = "<group>"; };
 		1A6EFA3B17A54D3500C569BC /* DLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLAppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A3FE30117D9418800EA1D4F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1A3FE2FD17D9417F00EA1D4F /* DMC_3D_color.png */,
+				1A3FE30217D94DD800EA1D4F /* Camera_3D_color.png */,
+				1A3FE30417D94FD900EA1D4F /* Info_3D_color.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		1A6EFA1D17A54D3500C569BC = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +114,7 @@
 				1A7C71F117A5734D002CDB8D /* DLActionButton.m */,
 				1A1A5DAF17A5AA9900FDDAE2 /* NSShadow+FastCreation.h */,
 				1A1A5DB017A5AA9900FDDAE2 /* NSShadow+FastCreation.m */,
+				1A3FE30117D9418800EA1D4F /* Assets */,
 				1A6EFA3017A54D3500C569BC /* Supporting Files */,
 			);
 			path = DesktopLink;
@@ -109,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				1A6EFA3117A54D3500C569BC /* DesktopLink-Info.plist */,
-				1A6EFA3217A54D3500C569BC /* InfoPlist.strings */,
 				1A6EFA3517A54D3500C569BC /* main.m */,
 				1A6EFA3717A54D3500C569BC /* DesktopLink-Prefix.pch */,
 			);
@@ -168,7 +182,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6EFA3417A54D3500C569BC /* InfoPlist.strings in Resources */,
+				1A3FE2FF17D9417F00EA1D4F /* DMC_3D_color.png in Resources */,
+				1A3FE30317D94DD800EA1D4F /* Camera_3D_color.png in Resources */,
+				1A3FE30517D94FD900EA1D4F /* Info_3D_color.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,17 +205,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		1A6EFA3217A54D3500C569BC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A6EFA3317A54D3500C569BC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1A6EFA4117A54D3500C569BC /* Debug */ = {

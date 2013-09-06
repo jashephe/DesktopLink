@@ -20,6 +20,7 @@
 		[self setOpaque:NO];
 		[self setBackgroundColor:[NSColor clearColor]];
 		[self setHasShadow:NO];
+		[self setMovable:NO];
 		[self setLevel:(NSNormalWindowLevel - 1)];
 		[self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
 	}

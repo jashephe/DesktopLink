@@ -40,7 +40,7 @@
 #pragma mark Graphics
 
 #define WINDOW_CORNER_RADIUS	 10.0f
-#define BACKGROUND_COLOR [NSColor colorWithCalibratedWhite:0.5 alpha:0.25]
+#define BACKGROUND_COLOR [NSColor colorWithCalibratedWhite:0.5 alpha:0.4]
 #define SHADOW_THICKNESS 10.0f
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -56,7 +56,7 @@
 	
 	[path addClip];
 	
-	NSShadow * shadow = [[NSShadow alloc] initWithColor:[NSColor colorWithCalibratedWhite:0.1f alpha:0.8f] offset:NSZeroSize blurRadius:SHADOW_THICKNESS];
+	NSShadow * shadow = [[NSShadow alloc] initWithColor:[NSColor colorWithCalibratedWhite:0.0f alpha:0.8f] offset:NSZeroSize blurRadius:SHADOW_THICKNESS];
 	[shadow set];
 	
 	[[NSColor blackColor] set];
