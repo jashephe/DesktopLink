@@ -22,7 +22,7 @@
 		[self setHasShadow:NO];
 		[self setMovable:NO];
 		[self setLevel:(NSNormalWindowLevel - 1)];
-		[self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
+		[self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorStationary];
 	}
 	return self;
 }
